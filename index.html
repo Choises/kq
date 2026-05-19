@@ -1,0 +1,206 @@
+<html lang="el"><head>
+<script type="text/javascript" charset="utf-8" async="" src="//://jwpcdn.com"></script>
+<title>MUSIC CHOICES</title>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<script type="text/javascript" src="//://jwpcdn.com"></script>
+<script type="text/javascript">jwplayer.key="XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
+<script charset="utf-8" src="//://jwpcdn.com"></script>
+<script charset="utf-8" src="//://jwpcdn.com"></script>
+<style>
+  /*  */
+  #player {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -1;
+  }
+  
+  /* */
+  #player video {
+    object-fit: cover !important;
+  }
+
+  /*  */
+  #player,
+  #player .jw-aspect,
+  #player .jw-wrapper,
+  #player .jw-preview,
+  #player .jw-media {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+</style>
+<style> 
+   
+    .player-poster[data-poster] {
+      background-size: cover;
+    }
+    body, html {
+      margin:0;
+      padding:0;
+      overflow: hidden; /**/
+      
+      /*  */
+      background-color: transparent !important;
+      background: transparent !important;
+      
+      /* */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+div a img{visibility:hidden;}
+body::before {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
+        content: '';
+        height: 70px;
+        width: 140px;
+        background: url('') no-repeat;
+        background-size: 140px auto, auto;
+        opacity: 0.4;
+    }
+    
+    /*  */
+    #volume-control-btn {
+      position: fixed;
+      top: 2cm;
+      left: 3cm;
+      z-index: 9999;
+      background: rgba(0, 10, 30, 0.75);
+      color: #00f0ff;
+      border: 2px solid #00f0ff;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px #00f0ff, inset 0 0 5px #00f0ff;
+      text-shadow: 0 0 5px #00f0ff;
+      transition: all 0.3s ease;
+    }
+
+    #volume-control-btn:hover {
+      background: #00f0ff;
+      color: #000;
+      box-shadow: 0 0 25px #00f0ff, 0 0 45px #00f0ff;
+      text-shadow: none;
+      transform: scale(1.05);
+    }
+    
+    </style>
+    <script type="text/javascript" src="https://b-cdn.net"></script>
+    <script charset="utf-8" src="//://jwpcdn.com"></script>
+    <script charset="utf-8" src="//://jwpcdn.com"></script>
+</head>
+<body>
+
+<button id="volume-control-btn" onclick="toggleSound()">🔇 Wellcome</button>
+
+<div id="player" ></div> 
+
+<!--  -->
+<script type="text/javascript">
+  // 
+  var allowedDomain = "https://xat.com/"; 
+  
+  // domain
+  if (window.location.hostname.indexOf(allowedDomain) !== -1) {
+
+      function getData(e){e=e.replace(/[\[]/,"[").replace(/[\]]/,"]");
+      var a=new RegExp("[?&]"+e+"=([^&#]*)").exec(location.search);return null===a?"":decodeURIComponent(a.replace(/\+/g," "))}
+      
+      var _0x9b3f = {
+        file: "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x72\x74\x6D\x70\x2E\x73\x74\x72\x65\x61\x6D\x73\x2E\x6F\x76\x68\x3A\x31\x39\x33\x36\x2F\x62\x61\x72\x61\x7A\x61\x72\x65\x6C\x61\x78\x2F\x62\x61\x72\x61\x7A\x61\x72\x65\x6C\x61\x78\x2F\x70\x6C\x61\x79\x6C\x69\x73\x74\x2E\x6D\x33\x75\x38",
+        type: "\x68\x6C\x73",
+        stretching: "\x66\x69\x6C\x6C",
+        title: "\x43\x48\x4F\x49\x43\x45\x53\x20\x4D\x55\x53\x49\x43",
+        desc: "\x4D\x55\x53\x49\x43\x20\x43\x48\x41\x4E\x4E\x45\x4C"
+      };
+
+      var playerInstance = jwplayer("player");
+      playerInstance.setup({
+          title : _0x9b3f.title,
+          description: _0x9b3f.desc,
+          file: _0x9b3f.file,
+          type: _0x9b3f.type,
+          width: "100%",
+          height: "100%",
+          stretching: _0x9b3f.stretching,
+          autostart: true,
+          mute: true,
+          controls: false,
+          cast:{}
+      });		
+
+      jwplayer("player").on("play", function(e){
+        jwplayer("player").setCurrentAudioTrack(getData("lang"));
+        jwplayer("player").setCurrentQuality(3)
+      });
+      
+      function toggleSound() {
+        const btn = document.getElementById('volume-control-btn');
+        if (playerInstance.getMute()) {
+          playerInstance.setMute(false);
+          btn.innerHTML = "\uD83D\uDD0A MUTE";
+        } else {
+          playerInstance.setMute(true);
+          btn.innerHTML = "\uD83D\uDD07 SOUND";
+        }
+      }
+
+  } else {
+      //
+      document.getElementById("player").innerHTML = "<div style='color:white;text-align:center;padding-top:40vh;font-family:sans-serif;font-size:18px;'>Unauthorized Domain. Access Denied.</div>";
+  }
+</script>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+<!--  -->
+<script type="text/javascript">
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 123) {
+      e.preventDefault();
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
+      e.preventDefault();
+      return false;
+    }
+    if (e.ctrlKey && e.keyCode == 85) {
+      e.preventDefault();
+      return false;
+    }
+    if (e.ctrlKey && e.keyCode == 83) {
+      e.preventDefault();
+      return false;
+    }
+  });
+</script>
+
+</body>
+</html>
